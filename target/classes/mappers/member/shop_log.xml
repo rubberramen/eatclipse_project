@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="log">
+	<select id="list" resultType="com.example.eatclipse.model.commons.LogDTO">
+		select * from log group by no having shop_name=#{userid} order by start_date desc
+	</select>
+	
+	<select id="review" resultType="com.example.eatclipse.model.commons.LogDTO">
+		select * from log where status=4 and review!='null' and shop_name=#{userid} group by no  order by start_date desc
+	</select>
+	
+	<update id="status">
+		update log set status=(status+1) where no=#{no}
+	</update>
+</mapper>
