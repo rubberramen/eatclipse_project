@@ -1,5 +1,5 @@
 ## Project : {Eatclipse}; 배달 웹 프로그램
-<img src="https://user-images.githubusercontent.com/96553431/168750603-06783335-ac3e-48be-84e6-c3d50fff5cc4.png" width="80" height="80"><br>
+<img src="https://user-images.githubusercontent.com/96553431/168750603-06783335-ac3e-48be-84e6-c3d50fff5cc4.png" width="120" height="120"><br>
 
 
 
