@@ -26,7 +26,7 @@ import com.example.eatclipse.model.shop.CartDTO;
 import com.example.eatclipse.model.shop.productDTO;
 
 @Controller
-@RequestMapping("/customer/*") // 고객 로그인 후, 여기로 들어오는 지 확인 필요 : 종현씨 수정 완료.
+@RequestMapping("/customer/*") // 고객 로그인 후, 여기로 들어오는 지 확인 필요
 
 public class CustController {
 
@@ -60,9 +60,6 @@ public class CustController {
 	/*-----------------------------------------------------------------
 	회원이 main에서 [마이페이지] 버튼 누르면, 
 	myPage.jsp로 이동하여 상세회원정보 보여주는 로직
-	
-	   * 이슈 : 충전 후, 다시 마이페이지 들어올 때 회원정보가 나타나지 않음!
-	   * 과거 주문 내역 쭉 나오는 기능도 여기서 만들어야 하나?
 	------------------------------------------------------------------*/
 
 	@RequestMapping("myPage.do")
@@ -108,8 +105,6 @@ public class CustController {
 
 	/*-----------------------------------------------------------------
 	회원이 마이페이지에서 [캐시 충전] 버튼을 누르면 돈 충전.  기본은 성공
-	
-	   * 이슈 : 충전 후, 다시 마이페이지 들어올 때 회원정보가 나타나지 않음!
 	------------------------------------------------------------------*/
 
 	@RequestMapping("cashCharge.do")
@@ -141,7 +136,7 @@ public class CustController {
 
 	/*
 	 * ----------------------------------------------------------------------- 고객
-	 * main에서 [한식], [양식], [분식] ... 버튼 눌러서 카테고리별 식당 리스트 확인 및 접근 1/10(월) 오전 일부 완성 -
+	 * main에서 [한식], [양식], [분식] ... 버튼 눌러서 카테고리별 식당 리스트 확인 및 접근
 	 * --------------------------------------------------------------------------
 	 */
 
@@ -157,14 +152,12 @@ public class CustController {
 
 	/*
 	 * ----------------------------------------------------------------------- 식당
-	 * 이름을 선택 시 각 식당의 메뉴 볼 수 확인 및 장바구니. * 망.... 확장 실패.
+	 * 이름을 선택 시 각 식당의 메뉴 볼 수 확인 및 장바구니. 
 	 * --------------------------------------------------------------------------
 	 */
 
 	@RequestMapping("shopInfo.do")
 	// PathVariable 쓰려면 {shop_name}으로 해야함.
-	// 그런데 문제는 각 카테고리마다 식당 수도 다르고, 유동적으로 변해야 함.
-	// 어케 해?ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
 	// --> httpservletrequest 사용.
 	public ModelAndView menuList(HttpServletRequest request, HttpSession session, ModelAndView mav) {
 		String shop_name = "";
@@ -286,7 +279,7 @@ public class CustController {
 		return mav;
 	}
 
-// worldcuplist 객체를 html에서 콘트롤러로 다시 전달받기 어떻게..?
+// worldcuplist 객체를 html에서 콘트롤러로 다시 전달받기
 	@RequestMapping("worldcup.do")
 	public ModelAndView worldcup(HttpServletRequest request,@RequestParam("count") int count, ModelAndView mav, HttpSession session) {
 		List<productDTO> worldcuplist=(List<productDTO>) session.getAttribute("worldcuplist");
